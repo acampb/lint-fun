@@ -47,7 +47,7 @@ jobs:
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
-        uses: acampb/super-linter-azure@latest
+        uses: acampb/actions-super-linter-azure@v1
       #uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: true
