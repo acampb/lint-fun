@@ -47,7 +47,7 @@ jobs:
           fetch-depth: 0
 
       - name: set executable
-        run: chmod +x /.tflint.d/plugins/tflint-ruleset-azurerm
+        run: chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
 
       ################################
       # Run Linter against code base #
