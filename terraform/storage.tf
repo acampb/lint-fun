@@ -1,4 +1,4 @@
-resource "azurerm_storage_account" "example" {
+resource "azurerm_storage_account" "big_example" {
   name                     = "storageaccountname"
   resource_group_name      = "rg-notreal"
   location                 = "East US 2"
