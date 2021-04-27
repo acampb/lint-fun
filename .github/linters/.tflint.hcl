@@ -80,5 +80,5 @@ rule "terraform_workspace_remote" {
 }
 
 plugin "azurerm" {
-  enabled = true
+  enabled = false
 }
