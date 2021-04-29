@@ -5,7 +5,7 @@ resource "azurerm_storage_account" "big_example" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
   allow_blob_public_access = true
-  account_kind = "StorageV2"
+  account_kind = "StorageV8"
 
   tags = var.tags
 }
@@ -13,5 +13,5 @@ resource "azurerm_storage_account" "big_example" {
 resource "azurerm_storage_container" "example" {
   name                  = "vhds"
   storage_account_name  = azurerm_storage_account.example.name
-  container_access_type = "container"
+  container_access_type = "private"
 }
