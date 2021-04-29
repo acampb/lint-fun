@@ -5,11 +5,9 @@ resource "azurerm_storage_account" "big_example" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
   allow_blob_public_access = true
-  account_kind = "S3Buckets"
+  account_kind = "StorageV2"
 
-  tags = {
-    environment = "staging"
-  }
+  tags = var.tags
 }
 
 resource "azurerm_storage_container" "example" {
