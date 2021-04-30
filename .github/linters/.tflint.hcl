@@ -3,7 +3,7 @@ config {
   force = false
   disabled_by_default = false
 
-  #varfile = ["example1.tfvars", "example2.tfvars"]
+  varfile = ["*.tfvars"]
   #variables = ["foo=bar", "bar=[\"baz\"]"]
 }
 

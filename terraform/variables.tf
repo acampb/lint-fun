@@ -4,6 +4,11 @@ variable "environment" {
   default     = "prod"
 }
 
+variable "storage_account_kind" {
+  type = string
+  description = "what kind of storage"
+}
+
 variable "location" {
   type        = string
   description = "a description"
