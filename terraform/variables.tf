@@ -1,17 +1,17 @@
 variable "environment" {
-  type = string
+  type        = string
   description = "a description"
-  default = "prod"
+  default     = "prod"
 }
 
 variable "location" {
-  type    = string
+  type        = string
   description = "a description"
-  default = "East US"
+  default     = "East US"
 }
 
 variable "tags" {
-  type = map(any)
+  type        = map(any)
   description = "a description"
   default = {
     Application = "Awesome Application"
