@@ -51,7 +51,7 @@ jobs:
       - name: set executable
         run: |
           pwd
-          wget $TFLINT_AZURERM_URI
+          wget $tflint_azurerm_uri
           unzip tflint-ruleset-azurerm_linux_amd64.zip -d ./.tflint.d/plugins/
           chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
 
