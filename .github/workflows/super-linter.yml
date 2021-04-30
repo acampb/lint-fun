@@ -23,6 +23,8 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  tflint_azurerm_uri: "https://github.com/terraform-linters/tflint-ruleset-azurerm/releases/download/v0.9.0/tflint-ruleset-azurerm_linux_amd64.zip"
 
 ###############
 # Set the Job #
@@ -47,7 +49,11 @@ jobs:
           fetch-depth: 0
 
       - name: set executable
-        run: chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
+        run: |
+          pwd
+          wget $TFLINT_AZURERM_URI
+          unzip tflint-ruleset-azurerm_linux_amd64.zip -d ./.tflint.d/plugins/
+          chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
 
       ################################
       # Run Linter against code base #
