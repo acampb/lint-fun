@@ -52,7 +52,7 @@ jobs:
         run: |
           pwd
           wget $tflint_azurerm_uri
-          unzip tflint-ruleset-azurerm_linux_amd64.zip -d /github/home/.tflint.d/plugins
+          unzip tflint-ruleset-azurerm_linux_amd64.zip -d /github/home/.tflint.d/plugins/
           chmod +x /github/home/.tflint.d/plugins/tflint-ruleset-azurerm
 
       ################################
