@@ -48,10 +48,11 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: set executable
+      - name: Download tflint AzureRM plugin
         run: |
           pwd
           wget $tflint_azurerm_uri
+          mkdir /github/home/.tflint.d/plugins/
           unzip tflint-ruleset-azurerm_linux_amd64.zip -d /github/home/.tflint.d/plugins/
           chmod +x /github/home/.tflint.d/plugins/tflint-ruleset-azurerm
 
