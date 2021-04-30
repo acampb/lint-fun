@@ -3,7 +3,7 @@ config {
   force = false
   disabled_by_default = false
 
-  varfile = ["./terraform/env/prod.tfvars"]
+  varfile = ["./terraform/env/prod.tfvars", "./terraform/env/dev.tfvars"]
   #variables = ["foo=bar", "bar=[\"baz\"]"]
 }
 
