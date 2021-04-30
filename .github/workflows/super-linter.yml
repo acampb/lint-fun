@@ -52,9 +52,9 @@ jobs:
         run: |
           pwd
           wget $tflint_azurerm_uri
-          mkdir /github/home/.tflint.d/plugins/
-          unzip tflint-ruleset-azurerm_linux_amd64.zip -d /github/home/.tflint.d/plugins/
-          chmod +x /github/home/.tflint.d/plugins/tflint-ruleset-azurerm
+          mkdir ./.tflint.d/plugins/
+          unzip tflint-ruleset-azurerm_linux_amd64.zip -d ./.tflint.d/plugins/
+          chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
 
       ################################
       # Run Linter against code base #
