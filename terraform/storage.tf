@@ -13,5 +13,5 @@ resource "azurerm_storage_account" "big_example" {
 resource "azurerm_storage_container" "example" {
   name                  = "vhds"
   storage_account_name  = azurerm_storage_account.example.name
-  container_access_type = "container"
+  container_access_type = "private"
 }

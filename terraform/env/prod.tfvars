@@ -1,2 +1,2 @@
 environment = "prod"
-storage_account_kind = "StorageV9"
+storage_account_kind = "StorageV2"
