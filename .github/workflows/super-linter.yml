@@ -23,6 +23,8 @@ on:
   pull_request:
     branches: [main]
 
+env:
+  tflint_azurerm_uri: "https://github.com/terraform-linters/tflint-ruleset-azurerm/releases/download/v0.9.0/tflint-ruleset-azurerm_linux_amd64.zip"
 
 ###############
 # Set the Job #
@@ -46,16 +48,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: set executable
-        run: chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
+      - name: Download tflint AzureRM plugin
+        run: |
+          pwd
+          wget $tflint_azurerm_uri
+          mkdir ./.tflint.d/
+          mkdir ./.tflint.d/plugins/
+          unzip tflint-ruleset-azurerm_linux_amd64.zip -d ./.tflint.d/plugins/
+          chmod +x ./.tflint.d/plugins/tflint-ruleset-azurerm
 
       ################################
       # Run Linter against code base #
       ################################
       - name: Lint Code Base
         #uses: acampb/action-super-linter-azure@v2
-        uses: github/super-linter@v3
+        uses: github/super-linter@v3.16.1
         env:
-          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_ALL_CODEBASE: true
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

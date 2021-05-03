@@ -5,7 +5,7 @@ resource "azurerm_storage_account" "big_example" {
   account_tier             = "Standard"
   account_replication_type = "GRS"
   allow_blob_public_access = true
-  account_kind = "StorageV2"
+  account_kind             = var.storage_account_kind
 
   tags = var.tags
 }
